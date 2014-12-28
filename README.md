@@ -2,7 +2,7 @@
 
 ### Usage
 ```
-  Usage: dojo [name] [dir]
+  Usage: dojojs [name] [dir]
 
   Options:
 
