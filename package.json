@@ -2,7 +2,7 @@
   "name": "generator-dojo-js",
   "version": "0.0.1",
   "description": "Simple Generator to generate a Dojo Boilerplate",
-  "main": "bin/dojo",
+  "bin": "bin/dojo",
   "directories": {
     "test": "test"
   },
