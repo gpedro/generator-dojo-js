@@ -33,6 +33,7 @@ function init() {
   emptyDirectory(dest, function(empty) {
     if(empty) {
       createApp(dest);
+      console.log('Project ' + name + ' created with success');
     } else {
       abort('Destination path is not empty or!');
     }
