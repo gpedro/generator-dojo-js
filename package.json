@@ -1,6 +1,6 @@
 {
   "name": "generator-dojo-js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simple Generator to generate a Dojo Boilerplate",
   "bin": {
     "dojojs": "bin/dojo"
