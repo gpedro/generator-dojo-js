@@ -13,9 +13,6 @@ cmd.version(version)
   .usage('[name] [dir]')
   .parse(process.argv);
 
-console.log(cmd.args.length);
-//console.log(__dirname);
-
 if(cmd.args.length != 2) {
   cmd.help();
 }
