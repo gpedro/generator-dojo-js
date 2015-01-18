@@ -13,7 +13,10 @@ cmd.version(version)
   .usage('[name] [dir]')
   .parse(process.argv);
 
-if(cmd.args != 2) {
+console.log(cmd.args.length);
+//console.log(__dirname);
+
+if(cmd.args.length != 2) {
   cmd.help();
 }
 
@@ -38,7 +41,7 @@ function init() {
 
 function createApp(dest) {
   // moving base
-  ncp('./templates/app', dest, function() {
+  ncp(path.join(__dirname, '..', 'templates', 'app'), dest, function() {
 
     // create README.md
     confRead();
@@ -57,7 +60,7 @@ function createApp(dest) {
 
 // dojojs generator helpers
 function confRead() {
-  var readme = fs.readFileSync('./templates/_README');
+  var readme = fs.readFileSync(path.join(__dirname, '..', 'templates', '_README'));
   readme = readme.toString().replace('{dojo_name}', name);
 
   createFile('README.md', readme);
@@ -75,7 +78,7 @@ function confPkg() {
 }
 
 function confGulp() {
-  fs.createReadStream('./templates/_Gulpfile').pipe(fs.createWriteStream(dest + '/Gulpfile.js'));
+  fs.createReadStream(path.join(__dirname, '..', 'templates', '_Gulpfile')).pipe(fs.createWriteStream(path.join(dest, 'Gulpfile.js')));
 }
 
 function confIgnr() {
@@ -84,7 +87,7 @@ function confIgnr() {
 
 
 function createFile(file, data) {
-  fs.writeFileSync(dest + '/' + file, data, {flags:'w+'}, name);
+  fs.writeFileSync(path.join(dest,file), data, {flags:'w+'}, name);
 }
 
 // express generator helpers
